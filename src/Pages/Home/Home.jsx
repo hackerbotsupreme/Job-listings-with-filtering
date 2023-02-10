@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
+import { JobsContext } from '../../Context/Job-list'
+import Container from '../../Layout/Container/Container'
+import Jobs from '../../Component/Jobs'
 
-const Home = props => {
+const Home = () => {
+    const { mappedJobs, setMappedJobs } = useContext(JobsContext)
     return (
         <div>
             <Layout>
-                <div className={`${styles.homo}`}>
-                    <h1>abb</h1>
+                <div className={`${styles.home}`}>
+                    <Container>
+                        {
+                            mappedJobs.map(jobs => {
+                                return (
+                                    <Jobs key={jobs.id} jobs={jobs} />
+                                )
+                            })
+                        }
+                    </Container>
                 </div>
             </Layout>
         </div>
