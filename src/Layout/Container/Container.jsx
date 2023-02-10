@@ -1,4 +1,4 @@
-import styles from './Container-style.module'
+import styles from './Container-style.module.scss'
 
 import React from 'react'
 

@@ -1,0 +1,37 @@
+@use '../../scss/global/colors'as *;
+
+.nav {
+    .header {
+        height: 9.75rem;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: url('/src/assets/images/bg-header-mobile.svg') $primary center;
+        background-size: contain;
+      
+        @media screen and (min-width:728px) {
+            background: url('/src/assets/images/bg-header-desktop.svg') $primary;
+        }
+
+    }
+
+    .filter {
+        height: max-content;
+        padding: 1rem 1.5rem;
+        position: relative;
+        display: flex;
+        background-color: $Light-filtered-jobs;
+        box-shadow: 0 0 2.5rem $primary-alt;
+        align-items: center;
+        top: -1.6rem;
+        border-radius: 5px;
+
+        .content {
+            width: 100%;
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
