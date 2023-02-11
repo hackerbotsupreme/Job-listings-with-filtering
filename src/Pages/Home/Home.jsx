@@ -12,13 +12,15 @@ const Home = () => {
             <Layout>
                 <div className={`${styles.home}`}>
                     <Container>
-                        {
-                            mappedJobs.map(jobs => {
-                                return (
-                                    <Jobs key={jobs.id} jobs={jobs} />
-                                )
-                            })
-                        }
+                        <div className={styles.posts}>
+                            {
+                                mappedJobs.map(jobs => {
+                                    return (
+                                        <Jobs key={jobs.id} jobs={jobs} />
+                                    )
+                                })
+                            }
+                        </div>
                     </Container>
                 </div>
             </Layout>

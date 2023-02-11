@@ -1,18 +1,19 @@
 @use '../../scss/global/colors'as *;
 
 .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
     .header {
         height: 9.75rem;
         width: 100%;
-        position: sticky;
-        top: 0;
         background: url('/src/assets/images/bg-header-mobile.svg') $primary center;
         background-size: contain;
-      
+
         @media screen and (min-width:728px) {
             background: url('/src/assets/images/bg-header-desktop.svg') $primary;
         }
-
     }
 
     .filter {
@@ -21,10 +22,14 @@
         position: relative;
         display: flex;
         background-color: $Light-filtered-jobs;
-        box-shadow: 0 0 2.5rem $primary-alt;
+        -webkit-box-shadow: -2px 17px 27px -16px rgba(170, 203, 203, 1);
+        -moz-box-shadow: -2px 17px 27px -16px rgba(170, 203, 203, 1);
+        box-shadow: -2px 17px 27px -16px rgba(170, 203, 203, 1);
         align-items: center;
         top: -1.6rem;
         border-radius: 5px;
+
+        margin-bottom: 3rem;
 
         .content {
             width: 100%;
