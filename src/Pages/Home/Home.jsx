@@ -5,28 +5,24 @@ import { JobsContext } from '../../Context/Job-list'
 import Container from '../../Layout/Container/Container'
 import Jobs from '../../Component/Jobs'
 
-const Home = () => {
-    const { mappedJobs, filterJobs, finalMap } = useContext(JobsContext)
-    return (
-        <div>
-            <Layout>
-                <div className={`${styles.home}`}>
-                    <Container>
-                        <div className={styles.posts}>
-                            {
-                               mappedJobs.map(jobs => {
-                                    return (
-                                        <Jobs key={jobs.id} jobs={jobs} />
-                                    )
-                                })
-                            }
-                        </div>
-                    </Container>
-                </div>
-            </Layout>
+function Home() {
+  const { finalMap } = useContext(JobsContext)
+  return (
+    <div>
+      <Layout>
+        <div className={`${styles.home}`}>
+          <Container>
+            <div className={styles.posts}>
+              {finalMap &&
+                finalMap.map((jobs) => {
+                  return <Jobs key={jobs.id} jobs={jobs} />
+                })}
+            </div>
+          </Container>
         </div>
-    )
+      </Layout>
+    </div>
+  )
 }
-
 
 export default Home
