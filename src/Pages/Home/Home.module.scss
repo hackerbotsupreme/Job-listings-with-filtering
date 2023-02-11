@@ -1,8 +1,21 @@
-.home{
-    .posts{
+.home {
+    .posts {
         display: flex;
         flex-direction: column;
-        row-gap: 3rem;
+        gap: 3rem;
         margin-bottom: 8rem;
+
+        @media screen and (min-width:650px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 3rem;
+            column-gap: 2rem;
+        }
+
+        @media screen and (min-width:1024px) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     }
 }

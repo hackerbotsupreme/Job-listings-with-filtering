@@ -45,6 +45,11 @@ export function JobsProvider({ children }) {
   }
 
   useEffect(() => {
+    /**
+     * filter job postings forEach of the words in the array of potential words.
+     * get the keys of each job posting object.
+     * return postings which values matches the words in filterJobs array
+     */
     filterJobs.forEach((e) => {
       const filtered = mappedJobs.filter((jobPosts) =>
         Object.keys(jobPosts).some((result) => {

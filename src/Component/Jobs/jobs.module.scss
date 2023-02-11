@@ -14,18 +14,30 @@
     border-radius: 5px;
     background: #fff;
 
-    .first {
+    @media screen and (min-width:1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 2.5rem;
+    }
 
+    .first {
         .logo {
             width: 3rem;
             position: absolute;
             top: -1.5rem;
+
+            @media screen and (min-width:1024px) {
+                width: 5rem;
+                object-fit: contain;
+                position: initial;
+            }
         }
 
         .jobInfo {
             display: flex;
             flex-direction: column;
-            row-gap: .9rem;
+            row-gap: .7rem;
             margin-top: .5rem;
 
             .infoTop {
@@ -69,6 +81,10 @@
                     cursor: pointer;
                     color: $primary;
                 }
+
+                @media screen and (min-width:1024px) {
+                    font-size: fn.rem(18);
+                }
             }
 
             .infoLast {
@@ -90,6 +106,12 @@
                 }
             }
         }
+
+        @media screen and (min-width:1024px) {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
     }
 
     .horizontalRule {
@@ -97,16 +119,22 @@
         height: 1px;
         background-color: $Dark-text;
         opacity: .7;
+
+        @media screen and (min-width:1024px) {
+            display: none;
+        }
     }
 
     .second {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+
     }
 
     .second button {
         width: max-content;
+        height: max-content;
         background-color: $alt-bg;
         color: $primary;
         font-weight: 700;

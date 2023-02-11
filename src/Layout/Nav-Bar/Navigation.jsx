@@ -9,7 +9,11 @@ import icon from '../../assets/images/icon-remove.svg'
 function Navigation() {
   const { filterJobs, removeItem, clearAll } = useContext(JobsContext)
   return (
-    <div className={styles.nav}>
+    <div
+      className={`${
+        filterJobs.length > 0 ? `${`${styles.nav} ${styles.more}`}` : styles.nav
+      }`}
+    >
       <header className={styles.header} />
       <Container>
         {filterJobs.length > 0 && (
