@@ -6,7 +6,7 @@ import Container from '../../Layout/Container/Container'
 import Jobs from '../../Component/Jobs'
 
 const Home = () => {
-    const { mappedJobs, setMappedJobs } = useContext(JobsContext)
+    const { mappedJobs, filterJobs, finalMap } = useContext(JobsContext)
     return (
         <div>
             <Layout>
@@ -14,7 +14,7 @@ const Home = () => {
                     <Container>
                         <div className={styles.posts}>
                             {
-                                mappedJobs.map(jobs => {
+                               mappedJobs.map(jobs => {
                                     return (
                                         <Jobs key={jobs.id} jobs={jobs} />
                                     )

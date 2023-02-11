@@ -13,23 +13,59 @@ const addFilterOption = (filterJobs, optionToAdd) => {
     return [...filterJobs, optionToAdd]
 }
 
+//function to remove a filter term
+const removeItems = (filterJobs, itemToRemove) => filterJobs.filter(itm => itm !== itemToRemove)
+
+//function to clear all search terms
+const clear = (filterJobs) => filterJobs.filter(itm => itm === -1)
+
+
 export const JobsContext = createContext({
     filterJobs: [],
     setFilterJobs: () => { },
     addFilterItem: () => { },
     mappedJobs: [],
-    setMappedJobs: () => { }
+    setMappedJobs: () => { },
+    removeItem: () => { },
+    clearAll: () => { },
+    finalMap: [],
+    setFinalMap: () => { }
 })
 
 
 export const JobsProvider = ({ children }) => {
     const [filterJobs, setFilterJobs] = useState([])
     const [mappedJobs, setMappedJobs] = useState(data)
+    const [finalMap, setFinalMap] = useState(mappedJobs)
+
 
     const addFilterItem = (optionToAdd) => {
         setFilterJobs(addFilterOption(filterJobs, optionToAdd))
     }
 
-    const value = { addFilterItem, mappedJobs, setMappedJobs, filterJobs }
+    useEffect(() => {
+        const abeg = () => {
+            filterJobs.forEach(e => {
+                console.log(e)
+                const filtered = mappedJobs.filter(jobPosts => {
+                    return Object.keys(jobPosts)
+                        .some(result => { return jobPosts[result].toString().includes(e) })
+                })
+              return  setMappedJobs(filtered)
+            })
+        }
+        abeg()
+
+    }, [filterJobs])
+    const removeItem = (itemToRemove) => {
+        setFilterJobs(removeItems(filterJobs, itemToRemove))
+    }
+
+    const clearAll = () => {
+        setFilterJobs(clear(filterJobs))
+    }
+   
+
+    const value = { addFilterItem, mappedJobs, setMappedJobs, filterJobs, removeItem, clearAll, finalMap, setFinalMap }
     return <JobsContext.Provider value={value}>{children}</JobsContext.Provider>
 }

@@ -6,7 +6,7 @@ import icon from '../../assets/images/icon-remove.svg'
 
 
 const Navigation = () => {
-    const { filterJobs } = useContext(JobsContext)
+    const { filterJobs, removeItem, clearAll } = useContext(JobsContext)
     return (
         <div className={styles.nav}>
             <header className={styles.header}>
@@ -19,13 +19,15 @@ const Navigation = () => {
                                 filterJobs && filterJobs.map((jobs, idx) => {
                                     return (
                                         <div className={styles.jobs} key={idx}>
-                                            <div className={styles.jobName}>{jobs}</div> <img className={styles.icon} src={icon} alt="icon" />
+                                            <div className={styles.jobName}>{jobs}</div> <img className={styles.icon} src={icon} alt="icon"
+                                                onClick={() => removeItem(jobs)}
+                                            />
                                         </div>
                                     )
                                 })
                             }
                         </div>
-                        {filterJobs.length > 0 && <p>clear</p>}
+                        {filterJobs.length > 0 && <p className={styles.clear} onClick={() => clearAll()}>Clear</p>}
                     </div>
                 }
             </Container>

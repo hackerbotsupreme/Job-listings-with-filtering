@@ -29,7 +29,6 @@
         align-items: center;
         top: -1.6rem;
         border-radius: 5px;
-
         margin-bottom: 3rem;
 
         .content {
@@ -64,6 +63,16 @@
                         background-color: $Very-bold-text;
                     }
                 }
+            }
+        }
+
+        .clear {
+            color: $Dark-text;
+
+            &:hover {
+                cursor: pointer;
+                color: $primary;
+                text-decoration: underline;
             }
         }
     }
