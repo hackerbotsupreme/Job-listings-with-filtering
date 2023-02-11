@@ -7,7 +7,7 @@ const addFilterOption = (filterJobs, optionToAdd) => {
     const exits = filterJobs.find(option => option === optionToAdd)
     //if it is do nothing
     if (exits) {
-        return filterJobs.map(option => option === optionToAdd ? option : '')
+        return filterJobs.map(option => option === optionToAdd ? option : option)
     }
     //default, add option to the list
     return [...filterJobs, optionToAdd]

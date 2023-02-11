@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { JobsContext } from '../../Context/Job-list'
+import Button from '../Button'
 import styles from './jobs.module.scss'
+
+
 
 const Jobs = ({ jobs }) => {
     const { company, logo, New, featured, position, role, level, postedAt, contract, location, languages, tools } = jobs
+   
     return (
         <div className={`${featured === true ? `${`${styles.JobS} ${styles.Jobs}`}` : styles.Jobs} `}>
             <div className={styles.first}>
@@ -27,16 +32,16 @@ const Jobs = ({ jobs }) => {
             </div>
             <div className={styles.horizontalRule}></div>
             <div className={styles.second}>
-                <button>{role}</button>
-                <button>{level}</button>
+                <Button job={role}>{role}</Button>
+                <Button job={level}>{level}</Button>
                 {languages && languages.map((language, idx) => {
                     return (
-                        <button key={idx}>{language}</button>
+                        <Button key={idx} job={language}>{language}</Button>
                     )
                 })}
                 {tools && tools.map((tool, idx) => {
                     return (
-                        <button key={idx}>{tool}</button>
+                        <Button key={idx} job={tool}>{tool}</Button>
                     )
                 })}
             </div>

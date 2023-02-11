@@ -4,6 +4,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    margin-bottom: 4rem;
 
     .header {
         height: 9.75rem;
@@ -35,8 +36,35 @@
             width: 100%;
             height: max-content;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .jobs {
+                display: flex;
+                column-gap: .2rem;
+                align-items: center;
+                border-radius: 5px;
+                justify-content: space-between;
+                background-color: $alt-bg;
+
+                .jobName {
+                    padding: .5rem;
+                    color: $primary;
+                }
+
+                .icon {
+                    background-color: $primary;
+                    padding: .6rem;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    width: 2rem;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $Very-bold-text;
+                    }
+                }
+            }
         }
     }
 }
