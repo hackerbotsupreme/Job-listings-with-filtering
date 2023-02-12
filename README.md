@@ -11,7 +11,7 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
     - [Design](#design)
     - [Implementation](#implementation)
     - [Implementation Filter](#implementation-filter)
-    - [Links](#links)
+    - [Link](#link)
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
@@ -42,9 +42,9 @@ Users should be able to:
 ![](./src/assets/images/job-backend.png)
 
 
-### Links
+### Link
 
-- Live Site URL: [Add live site URL here](https://jobs-listing.netlify.app)
+- Live Site URL: [live](https://jobs-listing.netlify.app)
 
 ## My process
 
