@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import styles from './Navigation.module.scss'
 import Container from '../Container/Container'
 import { JobsContext } from '../../Context/Job-list'
-import icon from '../../assets/images/icon-remove.svg'
+import icon from '../../../public/images/icon-remove.svg'
 
 function Navigation() {
   const { filterJobs, removeItem, clearAll } = useContext(JobsContext)

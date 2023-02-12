@@ -35,11 +35,11 @@ Users should be able to:
 
 ### Implementation
 
-![](./src/assets/images/job.png)
+![](/public/images/job.png)
 
 ### Implementation Filter
 
-![](./src/assets/images/job-backend.png)
+![](/public/images/update.png)
 
 
 ### Link

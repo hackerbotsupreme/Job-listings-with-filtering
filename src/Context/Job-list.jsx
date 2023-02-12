@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import data from '../../data.json'
+import data from '../data.json'
 
 // function to add filter options
 const addFilterOption = (filterJobs, optionToAdd) => {

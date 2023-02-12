@@ -1,0 +1,22 @@
+@use '../../scss/global/colors' as *;
+
+.btn{
+    width: max-content;
+        height: max-content;
+        background-color: $alt-bg;
+        color: $primary;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: .5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary;
+            color: $Light-Background;
+        }
+}
+
+.itm{
+    background-color: $primary;
+    color: $Light-Background;
+}

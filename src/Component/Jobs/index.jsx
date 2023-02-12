@@ -58,10 +58,10 @@ function Jobs({ jobs }) {
           </div>
           <div className={styles.infoLast}>
             <span className={styles.altInfo}>
-              {postedAt} <div className={styles.de} />
+              {postedAt} <span className={styles.de} />
             </span>
             <span className={styles.altInfo}>
-              {contract} <div className={styles.de} />
+              {contract} <span className={styles.de} />
             </span>
             <span>{location}</span>
           </div>
@@ -69,12 +69,12 @@ function Jobs({ jobs }) {
       </div>
       <div className={styles.horizontalRule} />
       <div className={styles.second}>
-        <Button job={role}>{role}</Button>
-        <Button job={level}>{level}</Button>
+        <Button Job={role}>{role}</Button>
+        <Button Job={level}>{level}</Button>
         {languages &&
           languages.map((language, idx) => {
             return (
-              <Button key={idx} job={language}>
+              <Button key={idx} Job={language}>
                 {language}
               </Button>
             )
@@ -82,7 +82,7 @@ function Jobs({ jobs }) {
         {tools &&
           tools.map((tool, idx) => {
             return (
-              <Button key={idx} job={tool}>
+              <Button key={idx} Job={tool}>
                 {tool}
               </Button>
             )
