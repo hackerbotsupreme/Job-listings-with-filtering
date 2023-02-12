@@ -2,6 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { motion } from 'framer-motion'
 import Button from '../Button'
 import styles from './jobs.module.scss'
 
@@ -22,10 +23,15 @@ function Jobs({ jobs }) {
   } = jobs
 
   return (
-    <div
+    <motion.div
       className={`${
         featured === true ? `${`${styles.JobS} ${styles.Jobs}`}` : styles.Jobs
       } `}
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
     >
       <div className={styles.first}>
         <img src={logo} alt="" className={styles.logo} />
@@ -82,7 +88,7 @@ function Jobs({ jobs }) {
             )
           })}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

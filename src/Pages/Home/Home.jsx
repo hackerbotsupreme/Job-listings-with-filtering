@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { motion } from 'framer-motion'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 import { JobsContext } from '../../Context/Job-list'
@@ -10,7 +11,7 @@ function Home() {
   return (
     <div>
       <Layout>
-        <div className={`${styles.home}`}>
+        <motion.div layout className={`${styles.home}`}>
           <Container>
             <div className={styles.posts}>
               {finalMap &&
@@ -19,7 +20,7 @@ function Home() {
                 })}
             </div>
           </Container>
-        </div>
+        </motion.div>
       </Layout>
     </div>
   )

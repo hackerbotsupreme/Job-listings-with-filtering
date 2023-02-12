@@ -1,11 +1,14 @@
-import Home from "./Pages/Home/Home"
 import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Home from './Pages/Home/Home'
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <motion.div layout>
+      <AnimatePresence>
+        <Home />
+      </AnimatePresence>
+    </motion.div>
   )
 }
 
